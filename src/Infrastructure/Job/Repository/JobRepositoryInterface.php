@@ -1,0 +1,12 @@
+<?php
+
+namespace App\Infrastructure\Job\Repository;
+
+use Domain\Job\Model\Job;
+
+interface JobRepositoryInterface
+{
+    public function read(int $id): Job;
+
+    public function create(Job $job): void;
+}
