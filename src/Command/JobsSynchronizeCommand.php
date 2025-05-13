@@ -2,6 +2,7 @@
 
 namespace App\Command;
 
+use App\Infrastructure\JobETL;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -13,12 +14,17 @@ use Symfony\Component\Console\Output\OutputInterface;
 )]
 final class JobsSynchronizeCommand extends Command
 {
-    public function __construct()
+    public function __construct(
+        private JobETL $etl,
+    )
     {
         parent::__construct();
     }
 
-    protected function execute(InputInterface $input, OutputInterface $output)
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        $this->etl->run();
+
+        return Command::SUCCESS;
     }
 }

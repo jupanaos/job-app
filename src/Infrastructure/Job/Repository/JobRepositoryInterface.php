@@ -8,5 +8,5 @@ interface JobRepositoryInterface
 {
     public function read(int $id): Job;
 
-    public function create(Job $job): void;
+    public function save(Job $job): void;
 }

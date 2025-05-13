@@ -24,15 +24,15 @@ class Job
     #[ORM\Column(length: 255)]
     private string $contract;
 
-    #[ORM\Column(length: 255)]
-    private string $url;
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $url;
 
     private function __construct(
         string $reference,
         string $title,
         string $description,
         string $contract,
-        string $url
+        ?string $url
     )
     {
         $this->reference = $reference;
@@ -47,7 +47,7 @@ class Job
         string $title,
         string $description,
         string $contract,
-        string $url
+        ?string $url
     ): self {
         return new self(
             $reference,
@@ -58,7 +58,7 @@ class Job
         );
     }
 
-    public function getIdentifier(): int
+    public function getId(): int
     {
         return $this->id;
     }
@@ -83,7 +83,7 @@ class Job
         return $this->contract;
     }
 
-    public function getUrl(): string
+    public function getUrl(): ?string
     {
         return $this->url;
     }

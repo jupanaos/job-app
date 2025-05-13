@@ -24,7 +24,7 @@ class JobRepository extends ServiceEntityRepository implements JobRepositoryInte
         return $job;
     }
 
-    public function create(Job $job): void
+    public function save(Job $job): void
     {
         $this->getEntityManager()->persist($job);
         $this->getEntityManager()->flush();
