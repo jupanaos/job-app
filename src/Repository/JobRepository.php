@@ -26,6 +26,12 @@ class JobRepository extends ServiceEntityRepository implements JobRepositoryInte
 
     public function save(Job $job): void
     {
+        $existingJob = $this->findOneBy(['reference' => $job->getReference()]);
+
+        if (null !== $existingJob) {
+            return;
+        }
+
         $this->getEntityManager()->persist($job);
         $this->getEntityManager()->flush();
     }
