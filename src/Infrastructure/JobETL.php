@@ -4,7 +4,7 @@ namespace App\Infrastructure;
 
 use App\Infrastructure\Job\Connector\JobApiConnector;
 use App\Infrastructure\Job\Processor\JobProcessor;
-use App\Infrastructure\Job\Repository\JobRepositoryInterface;
+use App\Domain\Job\Repository\JobRepositoryInterface;
 
 final class JobETL
 {

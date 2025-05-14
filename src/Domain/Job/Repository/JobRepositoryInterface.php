@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Infrastructure\Job\Repository;
+namespace App\Domain\Job\Repository;
 
 use Domain\Job\Model\Job;
 
