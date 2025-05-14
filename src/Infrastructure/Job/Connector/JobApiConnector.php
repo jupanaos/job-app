@@ -17,7 +17,8 @@ final class JobApiConnector
         private AuthenticationService $authenticationService,
         private CacheInterface $cache
     )
-    {}
+    {
+    }
 
     public function getJobs(): array
     {

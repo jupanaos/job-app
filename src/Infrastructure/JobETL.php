@@ -23,6 +23,5 @@ final class JobETL
         foreach ($jobs as $job) {
             $this->repository->save($job);
         }
-
     }
 }

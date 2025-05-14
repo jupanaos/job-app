@@ -17,13 +17,6 @@ class JobRepository extends ServiceEntityRepository implements JobRepositoryInte
         parent::__construct($registry, Job::class);
     }
 
-    public function read(int $id): Job
-    {
-        $job = $this->getEntityManager()->getReference($this->getClassName(), $id);
-
-        return $job;
-    }
-
     public function save(Job $job): void
     {
         $existingJob = $this->findOneBy(['reference' => $job->getReference()]);
@@ -35,5 +28,4 @@ class JobRepository extends ServiceEntityRepository implements JobRepositoryInte
         $this->getEntityManager()->persist($job);
         $this->getEntityManager()->flush();
     }
-
 }

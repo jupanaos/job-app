@@ -18,7 +18,8 @@ final class AuthenticationService
         private string $clientId,
         private string $clientSecret
     )
-    {}
+    {
+    }
 
     public function fetchAccessToken(): string
     {

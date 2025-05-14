@@ -6,7 +6,5 @@ use Domain\Job\Model\Job;
 
 interface JobRepositoryInterface
 {
-    public function read(int $id): Job;
-
     public function save(Job $job): void;
 }

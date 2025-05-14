@@ -33,8 +33,7 @@ class Job
         string $description,
         string $contract,
         ?string $url
-    )
-    {
+    ) {
         $this->reference = $reference;
         $this->title = $title;
         $this->description = $description;
@@ -87,5 +86,4 @@ class Job
     {
         return $this->url;
     }
-
 }

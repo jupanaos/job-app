@@ -16,8 +16,7 @@ final class JobsSynchronizeCommand extends Command
 {
     public function __construct(
         private JobETL $etl,
-    )
-    {
+    ) {
         parent::__construct();
     }
 
