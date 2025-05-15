@@ -1,17 +1,30 @@
+## Makefile env vars
+DOCKER_COMPOSE?= docker compose
+EXEC?= $(DOCKER_COMPOSE) exec
+PHP?= $(EXEC) php
+COMPOSER?= $(PHP) composer
+CONSOLE?= $(PHP) bin/console
+
 build:
-	docker compose build --no-cache
+	$(DOCKER_COMPOSE) build --no-cache
 
 up:
-	docker compose up -d
+	$(DOCKER_COMPOSE) up -d
 
 down:
-	docker compose down
+	$(DOCKER_COMPOSE) down
 
 bash:
-	docker compose exec php bash
+	$(PHP) bash
 
 schema-update:
-	docker compose exec php php bin/console doctrine:schema:update --dump-sql --force
+	$(CONSOLE) doctrine:schema:update --dump-sql --force
 
 install:
-	docker compose exec php composer install
+	$(COMPOSER) install
+
+env_local: .env ## Create the .env.local file
+	echo cp .env .env.local;\
+	cp .env .env.local;\
+	echo '\033[1;41m/!\ The .env.local file has been created. Please modify your file to your need.\033[0m';\
+	exit 0;\

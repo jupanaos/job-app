@@ -53,3 +53,8 @@ Force DB schema update:
 ```shell
 make schema-update
 ```
+
+Create env file:
+```shell
+make env_local
+```
