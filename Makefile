@@ -17,6 +17,9 @@ down:
 bash:
 	$(PHP) bash
 
+generate-keys:
+	$(CONSOLE) sec:generate-keys
+
 schema-update:
 	$(CONSOLE) doctrine:schema:update --dump-sql --force
 

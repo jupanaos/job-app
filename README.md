@@ -23,7 +23,7 @@ Set your own credentials for the [France-Travail API](france-travail.io) using S
 > **NOTE** : You need to create an account first
 
 ```sh
-bin/console sec:generate-keys
+make generate-keys
 ```
 ## ✅ Useful commands
 
@@ -57,4 +57,9 @@ make schema-update
 Create env file:
 ```shell
 make env_local
+```
+
+Generate secrets keys
+```sh
+make generate-keys
 ```
